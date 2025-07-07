@@ -1,5 +1,1 @@
-ptxas info    : 4 bytes gmem
-ptxas info    : Compiling entry function '_Z10simple_addi' for 'sm_60'
-ptxas info    : Function properties for _Z10simple_addi
-    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 7 registers, 324 bytes cmem[0]
+/cluster/tufts/donatolab/rrodri08/gpufi/NVBit-1.7.5/nvbit_release_x86_64/tools/nvbitfi/test-apps/simple_add//simple_add: symbol lookup error: /cluster/tufts/donatolab/rrodri08/gpufi/NVBit-1.7.5/nvbit_release_x86_64/tools/nvbitfi/profiler/profiler.so: undefined symbol: _ZTVNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEE
