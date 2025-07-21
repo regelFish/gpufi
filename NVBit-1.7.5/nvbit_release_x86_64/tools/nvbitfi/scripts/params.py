@@ -208,13 +208,13 @@ apps = {
 			1, # expected runtime
 			"" # additional parameters to the run.sh
 		],
-	'hello_world': [
-			NVBITFI_HOME + '/test-apps/hello_world', # workload directory
-			'hello_world', # binary name
-			NVBITFI_HOME + '/test-apps/hello_world/', # path to the binary file
-			1, # expected runtime
-			"" # additional parameters to the run.sh
-		],
+	# 'hello_world': [
+	# 		NVBITFI_HOME + '/test-apps/hello_world', # workload directory
+	# 		'hello_world', # binary name
+	# 		NVBITFI_HOME + '/test-apps/hello_world/', # path to the binary file
+	# 		1, # expected runtime
+	# 		"" # additional parameters to the run.sh
+	# 	],
 }
 
 #########################################################################
