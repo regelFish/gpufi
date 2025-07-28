@@ -1,2 +1,2 @@
 App	IGID	Injection Model	Num Jobs	Total Runtime	Total Runtime without Timeouts
-simple_add	gp	FLIP_SINGLE_BIT	150	90.31339	90.31339
+simple_add	gp	FLIP_SINGLE_BIT	250	162.265304	162.265304

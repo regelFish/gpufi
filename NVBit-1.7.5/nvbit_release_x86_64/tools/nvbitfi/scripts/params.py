@@ -208,6 +208,13 @@ apps = {
 			1, # expected runtime
 			"" # additional parameters to the run.sh
 		],
+	# 'simple_mul': [
+	# 		NVBITFI_HOME + '/test-apps/simple_mul', # workload directory
+	# 		'simple_mul', # binary name
+	# 		NVBITFI_HOME + '/test-apps/simple_mul/', # path to the binary file
+	# 		2, # expected runtime
+	# 		"" # additional parameters to the run.sh
+	# 	],
 	# 'hello_world': [
 	# 		NVBITFI_HOME + '/test-apps/hello_world', # workload directory
 	# 		'hello_world', # binary name

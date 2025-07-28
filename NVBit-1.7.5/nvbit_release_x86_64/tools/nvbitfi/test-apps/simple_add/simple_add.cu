@@ -49,7 +49,7 @@ __global__ void simple_add(int nreps)
 	int local_sum = 0; 
 
 	for (int i=0; i<nreps; i++) {
-		local_sum += 1;
+		local_sum *= 5;
 	}
 
 	atomicAdd(&global_sum, local_sum);
