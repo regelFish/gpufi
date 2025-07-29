@@ -75,12 +75,6 @@ make 2> stderr.txt
 make golden
 cd $CWD
 
-
-cd test-apps/simple_mul/
-make 2> stderr.txt
-make golden
-cd $CWD
-
 ###############################################################################
 # Step 1: Profile and generate injection list
 #

@@ -46,10 +46,10 @@ __managed__ uint32_t global_sum;
 ///////////////////////////////////////////////////////////////////////////////
 __global__ void simple_add(int nreps)
 {
-	int local_sum = 0; 
+	int local_sum = 1; 
 
 	for (int i=0; i<nreps; i++) {
-		local_sum *= 5;
+		local_sum = local_sum * 5;
 	}
 
 	atomicAdd(&global_sum, local_sum);
