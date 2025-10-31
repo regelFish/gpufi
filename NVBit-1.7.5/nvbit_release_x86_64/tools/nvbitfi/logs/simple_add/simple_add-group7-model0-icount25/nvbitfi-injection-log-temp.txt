@@ -5,11 +5,11 @@ Injection data
 index: 0
 kernel_name: simple_add(int)
 ctas: 10
-instrs: 248992
- grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 108768 grp 4: 32 grp 5: 140192 grp 6: 248960 grp 7: 140192
-mask: 0x1000000
-beforeVal: 0x2b6d;afterVal: 0x1002b6d
-regNo: 3
-opcode: MOV32I
-pcOffset: 0x208
-tid: 5560
+instrs: 63968
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 12288 grp 4: 0 grp 5: 51680 grp 6: 63968 grp 7: 51680
+mask: 0x100000
+beforeVal: 0x0;afterVal: 0x100000
+regNo: 0
+opcode: MOV
+pcOffset: 0x58
+tid: 6120

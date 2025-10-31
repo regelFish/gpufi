@@ -1,11 +1,15 @@
 inspecting: simple_add(int)
 num_static_instrs: 54
 maxregs: 7(7)
-ERROR FAIL Detected Signal SIGKILL
- grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 26592 grp 4: 0 grp 5: 59712 grp 6: 86304 grp 7: 59712
-mask: 0x2000
-beforeVal: 0x2;afterVal: 0x2002
-regNo: 2
-opcode: LOP32I
-pcOffset: 0x48
-tid: 9231
+Injection data
+index: 0
+kernel_name: simple_add(int)
+ctas: 10
+instrs: 97760
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 31712 grp 4: 0 grp 5: 66048 grp 6: 97760 grp 7: 66048
+mask: 0x40000
+beforeVal: 0x0;afterVal: 0x40000
+regNo: 0
+opcode: MOV
+pcOffset: 0x58
+tid: 3240

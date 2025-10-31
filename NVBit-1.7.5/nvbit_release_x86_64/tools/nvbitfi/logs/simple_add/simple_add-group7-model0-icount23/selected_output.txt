@@ -1,1 +1,1 @@
-global sum = -1143734272 
+global sum = -1886126080 

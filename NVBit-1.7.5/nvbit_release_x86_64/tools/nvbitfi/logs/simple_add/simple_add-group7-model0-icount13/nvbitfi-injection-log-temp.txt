@@ -1,4 +1,15 @@
 inspecting: simple_add(int)
 num_static_instrs: 54
 maxregs: 7(7)
-ERROR FAIL in kernel execution (an illegal memory access was encountered); 
+Injection data
+index: 0
+kernel_name: simple_add(int)
+ctas: 10
+instrs: 78720
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 22848 grp 4: 0 grp 5: 55872 grp 6: 78720 grp 7: 55872
+mask: 0x10000000
+beforeVal: 0x9;afterVal: 0x10000009
+regNo: 0
+opcode: IADD32I
+pcOffset: 0x38
+tid: 1705
