@@ -1,0 +1,15 @@
+inspecting: simple_add(int)
+num_static_instrs: 54
+maxregs: 7(7)
+Injection data
+index: 0
+kernel_name: simple_add(int)
+ctas: 10
+instrs: 285536
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 114688 grp 4: 64 grp 5: 170784 grp 6: 285472 grp 7: 170784
+mask: 0x4000
+beforeVal: 0xffffffff;afterVal: 0xffffbfff
+regNo: 4
+opcode: VOTE
+pcOffset: 0x1b0
+tid: 3262

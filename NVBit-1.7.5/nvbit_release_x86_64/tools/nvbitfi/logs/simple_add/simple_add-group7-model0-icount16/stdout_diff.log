@@ -1,5 +1,4 @@
-0a1,4
-> Device 0 (NVIDIA H100 PCIe) is being used
-> memory: 79.1093 GB ECC on 114 SMs x1755000
-> #CTAs=10, nreps=10, threads/CTA=1024
+4c4
+< global sum = 411750500 
+---
 > global sum = 102400 

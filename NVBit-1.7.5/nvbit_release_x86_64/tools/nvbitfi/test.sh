@@ -46,7 +46,7 @@ printf "\nStep 0 (2): Setting environment variables\n"
 # environment variables for NVBit
 export NOBANNER=1
 # set TOOL_VERBOSE=1 to print debugging information during profling and injection runs 
-export TOOL_VERBOSE=1
+export TOOL_VERBOSE=0
 export VERBOSE=0
 
 export NVBITFI_HOME=$CWD
