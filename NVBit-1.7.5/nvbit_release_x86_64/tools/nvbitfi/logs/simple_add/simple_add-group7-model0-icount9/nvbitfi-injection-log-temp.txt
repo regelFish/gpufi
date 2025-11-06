@@ -5,11 +5,11 @@ Injection data
 index: 0
 kernel_name: simple_add(int)
 ctas: 10
-instrs: 289120
- grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 114688 grp 4: 64 grp 5: 174368 grp 6: 289056 grp 7: 174368
-mask: 0x100000
-beforeVal: 0x11;afterVal: 0x100011
+instrs: 128096
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 51296 grp 4: 0 grp 5: 76800 grp 6: 128096 grp 7: 76800
+mask: 0x200000
+beforeVal: 0x8;afterVal: 0x200008
 regNo: 3
-opcode: S2R
-pcOffset: 0x1b8
-tid: 6321
+opcode: IADD
+pcOffset: 0x70
+tid: 7231

@@ -5,11 +5,11 @@ Injection data
 index: 0
 kernel_name: simple_add(int)
 ctas: 10
-instrs: 181312
- grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 84736 grp 4: 0 grp 5: 96576 grp 6: 181312 grp 7: 96576
-mask: 0x8000000
-beforeVal: 0xffffffff;afterVal: 0xf7ffffff
-regNo: 4
-opcode: VOTE
-pcOffset: 0x1b0
-tid: 4290
+instrs: 315968
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 117184 grp 4: 64 grp 5: 198720 grp 6: 315904 grp 7: 198720
+mask: 0x20000000
+beforeVal: 0x0;afterVal: 0x20000000
+regNo: 5
+opcode: POPC
+pcOffset: 0x1d0
+tid: 8893
