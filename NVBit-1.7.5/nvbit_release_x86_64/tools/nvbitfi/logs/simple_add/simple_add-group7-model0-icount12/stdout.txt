@@ -1,4 +1,0 @@
-Device 0 (Tesla P100-PCIE-16GB) is being used
-memory: 15.8948 GB ECC on 56 SMs
-#CTAs=10, nreps=10, threads/CTA=1024
-global sum = 672137536 
