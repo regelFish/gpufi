@@ -58,14 +58,64 @@ export CUDA_BASE_DIR=/usr/local/cuda
 export PATH=$PATH:$CUDA_BASE_DIR/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_BASE_DIR/lib64/:$CUDA_BASE_DIR/extras/CUPTI/lib64/
 
+# Detect GPU name
+gpu_name=$(nvidia-smi --query-gpu=name --format=csv,noheader | head -n 1)
+
+# Normalize whitespace
+gpu_name_clean=$(echo "$gpu_name" | sed 's/[[:space:]]\+/ /g')
+
+# Determine SM architecture
+get_sm_arch() {
+    case "$1" in
+        "NVIDIA GeForce RTX 3060"*)      echo "86" ;;  # Ampere
+        "NVIDIA GeForce RTX 3070"*)      echo "86" ;;
+        "NVIDIA GeForce RTX 3080"*)      echo "86" ;;
+        "NVIDIA GeForce RTX 3090"*)      echo "86" ;;
+        "NVIDIA GeForce RTX 4060"*)      echo "89" ;;  # Ada
+        "NVIDIA GeForce RTX 4070"*)      echo "89" ;;
+        "NVIDIA GeForce RTX 4080"*)      echo "89" ;;
+        "NVIDIA GeForce RTX 4090"*)      echo "89" ;;
+        "NVIDIA A100"*)                  echo "80" ;;  # Ampere (datacenter)
+        "NVIDIA H100"*)                  echo "90" ;;  # Hopper
+        "NVIDIA L40"*)                   echo "89" ;;
+        "Tesla V100"*)                   echo "70" ;;  # Volta
+        "Tesla T4"*)                     echo "75" ;;  # Turing
+        "Tesla P100"*)                   echo "60" ;;  # Pascal
+        "Tesla K80"*)                    echo "37" ;;  # Kepler
+        *)                               echo "Unknown" ;;
+    esac
+}
+
+sm_arch=$(get_sm_arch "$gpu_name_clean")
+
+echo "Detected GPU: $gpu_name_clean"
+echo "SM Architecture: $sm_arch"
+
+DIRECTORIES=(
+        "./test-apps"
+        "./profiler"
+        "./injector"
+)
+
+for dir in "${DIRECTORIES[@]}"; do
+    echo "Processing directory: $dir"
+    find "$dir" -type f -name "Makefile" | while read -r mk; do
+        echo "  Updating $mk"
+        # Replace any ARCH=<digits> with ARCH=$sm_arch
+        sed -i "s/^ARCH=[0-9]\+/ARCH=$sm_arch/" "$mk"
+    done
+done
+
 
 ###############################################################################
 # Step 0 (3): Build the nvbitfi injector and profiler tools
 ###############################################################################
 printf "\nStep 0 (3): Build the nvbitfi injector and profiler tools\n"
 cd injector 
+make clean
 make
 cd ../profiler/
+make clean
 make
 cd $CWD
 
