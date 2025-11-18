@@ -41,6 +41,7 @@ find . -name "*.sh" | xargs chmod +x
 module load cuda
 module load gcc
 module load bc
+module load python/3.10
 
 ###############################################################################
 # Step 0 (2): Setup environment 

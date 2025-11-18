@@ -2,7 +2,7 @@ TARGET = simple_add
 
 # CUDA
 NVCC = `which nvcc`
-ARCH=60
+ARCH=80
 
 all: clean $(TARGET) 
 
