@@ -68,16 +68,21 @@ gpu_name_clean=$(echo "$gpu_name" | sed 's/[[:space:]]\+/ /g')
 # Determine SM architecture
 get_sm_arch() {
     case "$1" in
-        "Tesla K20Xm"*)                  echo "35" ;;  # Kepler
-        "Tesla P100"*)                   echo "60" ;;  # Pascal
+        "NVIDIA GeForce RTX 3060"*)      echo "86" ;;  # Ampere
+        "NVIDIA GeForce RTX 3070"*)      echo "86" ;;
+        "NVIDIA GeForce RTX 3080"*)      echo "86" ;;
+        "NVIDIA GeForce RTX 3090"*)      echo "86" ;;
+        "NVIDIA GeForce RTX 4060"*)      echo "89" ;;  # Ada
+        "NVIDIA GeForce RTX 4070"*)      echo "89" ;;
+        "NVIDIA GeForce RTX 4080"*)      echo "89" ;;
+        "NVIDIA GeForce RTX 4090"*)      echo "89" ;;
+        "NVIDIA A100"*)                  echo "80" ;;  # Ampere (datacenter)
+        "NVIDIA H100"*)                  echo "90" ;;  # Hopper
+        "NVIDIA L40"*)                   echo "89" ;;
         "Tesla V100"*)                   echo "70" ;;  # Volta
-        "NVIDIA T4"*)                    echo "75" ;;  # Turing
-        "NVIDIA RTX 6000"*)              echo "75" ;;  # Turing (Quadro RTX 6000)
-        "NVIDIA RTX A6000"*)             echo "86" ;;  # Ampere
-        "NVIDIA RTX 6000 Ada"*)          echo "89" ;;  # Ada
-        "NVIDIA A100"*)                  echo "80" ;;  # Ampere GA100
-        "NVIDIA H100"*)                  echo "90" ;;  # Hopper GH100
-        "NVIDIA L40s"*)                  echo "89" ;;  # Ada
+        "Tesla T4"*)                     echo "75" ;;  # Turing
+        "Tesla P100"*)                   echo "60" ;;  # Pascal
+        "Tesla K80"*)                    echo "37" ;;  # Kepler
         *)                               echo "Unknown" ;;
     esac
 }
@@ -120,7 +125,7 @@ cd $CWD
 # stderr files. User must generate this before starting the injection campaign.
 ###############################################################################
 printf "\nStep 0 (4): Run and collect output without instrumentation\n"
-cd test-apps/simple_add/
+cd test-apps/simple_subtract/
 make 2> stderr.txt
 make golden
 cd $CWD
@@ -147,7 +152,7 @@ python generate_injection_list.py
 # Step 2: Run the error injection campaign 
 ################################################
 printf "\nStep 2: Run the error injection campaign"
-python run_injections.py standalone # to run the injection campaign on a single machine with single gpu
+python run_injections.py standalone simple_subtract # to run the injection campaign on a single machine with single gpu
 
 ################################################
 # Step 3: Parse the results
