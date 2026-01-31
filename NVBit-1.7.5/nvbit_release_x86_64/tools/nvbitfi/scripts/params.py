@@ -208,6 +208,13 @@ apps = {
 			1, # expected runtime
 			"" # additional parameters to the run.sh
 		],
+	'simple_subtract': [
+			NVBITFI_HOME + '/test-apps/simple_subtract', # workload directory
+			'simple_subtract', # binary name
+			NVBITFI_HOME + '/test-apps/simple_subtract/', # path to the binary file
+			1, # expected runtime in seconds
+			"" # additional parameters to the run.sh
+		],
 }
 
 #########################################################################
