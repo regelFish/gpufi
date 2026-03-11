@@ -1,6 +1,2 @@
 timestamp, index, name, pstate, temperature.gpu, utilization.gpu [%], utilization.memory [%], memory.used [MiB], memory.total [MiB], power.draw [W], clocks.current.sm [MHz], clocks.current.memory [MHz]
-<<<<<<< HEAD
-2026/03/11 17:05:55.692, 0, NVIDIA A100-PCIE-40GB, P0, 37, 0 %, 0 %, 4 MiB, 40960 MiB, 47.00 W, 210 MHz, 1215 MHz
-=======
-2026/03/11 16:42:05.997, 0, Tesla P100-PCIE-16GB, P0, 38, 0 %, 0 %, 0 MiB, 16384 MiB, 26.88 W, 405 MHz, 715 MHz
->>>>>>> cb847c77fce431bd106342ad85beecb9fd210148
+2026/03/11 17:17:54.491, 0, Tesla P100-PCIE-16GB, P0, 37, 0 %, 0 %, 0 MiB, 16384 MiB, 26.64 W, 405 MHz, 715 MHz

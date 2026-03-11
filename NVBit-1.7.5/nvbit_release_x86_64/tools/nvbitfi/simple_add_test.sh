@@ -20,10 +20,10 @@ set -e
 # Define GPU logger helper functions
 start_gpu_logger() {
     local outfile="$1"
-    nvidia-smi \
+    nvidia-smi -lms 200  \
         --query-gpu=timestamp,index,name,pstate,temperature.gpu,utilization.gpu,utilization.memory,memory.used,memory.total,power.draw,clocks.sm,clocks.mem \
         --format=csv \
-        -l 5 > "$outfile" &
+        > "$outfile" &
     GPU_LOGGER_PID=$!
     echo "Started nvidia-smi logger (PID=$GPU_LOGGER_PID) -> $outfile"
 }
