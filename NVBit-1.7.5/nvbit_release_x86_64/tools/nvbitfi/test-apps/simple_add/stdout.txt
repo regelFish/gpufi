@@ -1,4 +1,8 @@
 Device 0 (NVIDIA A100-PCIE-40GB) is being used
 memory: 39.3939 GB ECC on 108 SMs
 #CTAs=10, nreps=10, threads/CTA=1024
+<<<<<<< HEAD
 global sum = 102400 
+=======
+global sum = -1598010624 
+>>>>>>> cb847c77fce431bd106342ad85beecb9fd210148
