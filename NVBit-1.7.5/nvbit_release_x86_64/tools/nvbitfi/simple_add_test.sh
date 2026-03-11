@@ -39,6 +39,10 @@ stop_gpu_logger() {
 
 trap stop_gpu_logger EXIT
 
+timestamp() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S.%3N')] $*"
+}
+
 # Uncomment for verbose output
 # set -x 
 

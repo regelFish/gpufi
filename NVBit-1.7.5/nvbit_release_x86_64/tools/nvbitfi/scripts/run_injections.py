@@ -101,6 +101,7 @@ def check_and_submit_multigpu(cmd):
 # Run Multiple injection experiments
 ###############################################################################
 def run_multiple_injections_igid(app, inj_mode, igid, where_to_run):
+    ts_log = open(p.app_log_dir[app] + "/injection_timestamps.log", "a")
     bfm_list = [] 
     if inj_mode == p.RF_MODE: 
         bfm_list = p.rf_bfm_list 
@@ -131,11 +132,17 @@ def run_multiple_injections_igid(app, inj_mode, igid, where_to_run):
                 elif where_to_run == "multigpu":
                     check_and_submit_multigpu(cmd)
                 else:
+                    ts_start = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
                     os.system(cmd)
+                    ts_end = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
+                    ts_log.write("[%s -> %s] Injection #%d: app=%s, igid=%s, bfm=%d, kname=%s\n" 
+                                 % (ts_start, ts_end, total_jobs, app, str(igid), bfm, kname))
+                    ts_log.flush()
                 if p.verbose: print ("done injection run ")
             else:
                 print ("Line doesn't have enough params:%s" %line)
             print_heart_beat(total_jobs)
+    ts_log.close()
 
 
 ###############################################################################

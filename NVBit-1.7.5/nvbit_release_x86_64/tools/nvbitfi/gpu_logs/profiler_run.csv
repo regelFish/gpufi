@@ -1,1 +1,3 @@
-2026/03/11 10:37:42.366, 0, Tesla P100-PCIE-16GB, P0, 37, 0, 0, 0, 16384, 32.14, 1189, 715
+timestamp, index, name, pstate, temperature.gpu, utilization.gpu [%], utilization.memory [%], memory.used [MiB], memory.total [MiB], power.draw [W], clocks.current.sm [MHz], clocks.current.memory [MHz]
+2026/03/11 17:05:56.758, 0, NVIDIA A100-PCIE-40GB, P0, 37, 0 %, 0 %, 4 MiB, 40960 MiB, 50.16 W, 930 MHz, 1215 MHz
+2026/03/11 17:05:57.768, 0, NVIDIA A100-PCIE-40GB, P0, 37, 10 %, 0 %, 25 MiB, 40960 MiB, 51.94 W, 975 MHz, 1215 MHz
