@@ -1,0 +1,11 @@
+inspecting: simple_add(int)
+num_static_instrs: 54
+maxregs: 7(7)
+ERROR FAIL Detected Signal SIGKILL
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 10208 grp 4: 0 grp 5: 28736 grp 6: 38944 grp 7: 28736
+mask: 0x1
+beforeVal: 0xa;afterVal: 0xb
+regNo: 2
+opcode: MOV
+pcOffset: 0x10
+tid: 9586

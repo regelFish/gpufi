@@ -1,0 +1,15 @@
+inspecting: simple_subtract(int)
+num_static_instrs: 60
+maxregs: 7(7)
+Injection data
+index: 0
+kernel_name: simple_subtract(int)
+ctas: 10
+instrs: 204096
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 86304 grp 4: 8192 grp 5: 109600 grp 6: 195904 grp 7: 109600
+mask: 0x20000
+beforeVal: 0x0;afterVal: 0x20000
+regNo: 2
+opcode: IADD32I
+pcOffset: 0x108
+tid: 8511

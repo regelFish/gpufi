@@ -1,0 +1,6 @@
+5c5,6
+< ERROR FAIL in kernel execution (an illegal memory access was encountered); 
+\ No newline at end of file
+---
+> Final global sum = 897600
+> Amount subtracted = 102400

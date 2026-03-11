@@ -1,0 +1,15 @@
+inspecting: simple_subtract(int)
+num_static_instrs: 60
+maxregs: 7(7)
+Injection data
+index: 0
+kernel_name: simple_subtract(int)
+ctas: 10
+instrs: 395232
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 115872 grp 4: 41024 grp 5: 238336 grp 6: 354208 grp 7: 238336
+mask: 0x800000
+beforeVal: 0x0;afterVal: 0x800000
+regNo: 6
+opcode: XMAD
+pcOffset: 0x228
+tid: 3381

@@ -1,0 +1,15 @@
+inspecting: simple_add(int)
+num_static_instrs: 54
+maxregs: 7(7)
+Injection data
+index: 0
+kernel_name: simple_add(int)
+ctas: 10
+instrs: 239667
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 106496 grp 4: 19 grp 5: 133152 grp 6: 239648 grp 7: 133152
+mask: 0x400
+beforeVal: 0x2af4;afterVal: 0x2ef4
+regNo: 3
+opcode: MOV32I
+pcOffset: 0x208
+tid: 5345

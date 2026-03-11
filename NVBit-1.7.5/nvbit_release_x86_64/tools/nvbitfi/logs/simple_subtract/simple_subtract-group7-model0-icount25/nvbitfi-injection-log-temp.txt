@@ -1,0 +1,15 @@
+inspecting: simple_subtract(int)
+num_static_instrs: 60
+maxregs: 7(7)
+Injection data
+index: 0
+kernel_name: simple_subtract(int)
+ctas: 10
+instrs: 53120
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 12320 grp 4: 0 grp 5: 40800 grp 6: 53120 grp 7: 40800
+mask: 0x200000
+beforeVal: 0x0;afterVal: 0x200000
+regNo: 0
+opcode: MOV
+pcOffset: 0x28
+tid: 3599

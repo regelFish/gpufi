@@ -1,0 +1,4 @@
+inspecting: simple_add(int)
+num_static_instrs: 54
+maxregs: 7(7)
+ERROR FAIL in kernel execution (an illegal memory access was encountered); 

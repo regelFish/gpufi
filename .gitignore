@@ -1,4 +1,3 @@
-**/logs/
 **/test-apps/**.exe
 **/test-apps/**stdout.txt
 **/test-apps/**stderr.txt

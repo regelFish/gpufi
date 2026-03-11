@@ -1,0 +1,15 @@
+inspecting: simple_subtract(int)
+num_static_instrs: 60
+maxregs: 7(7)
+Injection data
+index: 0
+kernel_name: simple_subtract(int)
+ctas: 10
+instrs: 384128
+ grp 0: 0 grp 1: 0 grp 2: 0 grp 3: 114880 grp 4: 41024 grp 5: 228224 grp 6: 343104 grp 7: 228224
+mask: 0x800000
+beforeVal: 0xe;afterVal: 0x80000e
+regNo: 3
+opcode: S2R
+pcOffset: 0x208
+tid: 6958
