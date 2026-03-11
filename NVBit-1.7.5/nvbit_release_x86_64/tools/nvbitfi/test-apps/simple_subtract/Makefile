@@ -1,7 +1,7 @@
 TARGET = simple_subtract
 # CUDA
 NVCC = `which nvcc`
-ARCH=80
+ARCH=60
 
 all: clean $(TARGET) 
 
