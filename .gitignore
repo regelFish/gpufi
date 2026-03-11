@@ -1,3 +1,15 @@
 **/test-apps/**.exe
 **/test-apps/**stdout.txt
 **/test-apps/**stderr.txt
+
+*.o
+*.so
+
+test-apps/*/simple_add
+test-apps/*/simple_subtract
+
+test-apps/*/stdout.txt
+test-apps/*/stderr.txt
+
+__pycache__/
+*.pyc
