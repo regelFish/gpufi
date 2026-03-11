@@ -16,7 +16,28 @@
 # 
 
 # stop after first error 
-set -e 
+set -e
+# Define GPU logger helper functions
+start_gpu_logger() {
+    local outfile="$1"
+    nvidia-smi \
+        --query-gpu=timestamp,index,name,pstate,temperature.gpu,utilization.gpu,utilization.memory,memory.used,memory.total,power.draw,clocks.sm,clocks.mem \
+        --format=csv,noheader,nounits \
+        -l 1 > "$outfile" &
+    GPU_LOGGER_PID=$!
+    echo "Started nvidia-smi logger (PID=$GPU_LOGGER_PID) -> $outfile"
+}
+
+stop_gpu_logger() {
+    if [[ -n "${GPU_LOGGER_PID:-}" ]]; then
+        kill "$GPU_LOGGER_PID" 2>/dev/null || true
+        wait "$GPU_LOGGER_PID" 2>/dev/null || true
+        unset GPU_LOGGER_PID
+        echo "Stopped nvidia-smi logger"
+    fi
+}
+
+trap stop_gpu_logger EXIT
 
 # Uncomment for verbose output
 # set -x 
@@ -87,6 +108,13 @@ sm_arch=$(get_sm_arch "$gpu_name_clean")
 echo "Detected GPU: $gpu_name_clean"
 echo "SM Architecture: $sm_arch"
 
+# Directory for GPU telemetry
+GPU_LOG_DIR="$CWD/gpu_logs"
+mkdir -p "$GPU_LOG_DIR"
+
+# Save one-time GPU inventory / state snapshot
+nvidia-smi -q > "$GPU_LOG_DIR/gpu_info.txt"
+
 DIRECTORIES=(
         "./test-apps"
         "./profiler"
@@ -122,7 +150,11 @@ cd $CWD
 printf "\nStep 0 (4): Run and collect output without instrumentation\n"
 cd test-apps/simple_add/
 make 2> stderr.txt
+
+start_gpu_logger "$GPU_LOG_DIR/golden_run.csv"
 make golden
+stop_gpu_logger
+
 cd $CWD
 
 ###############################################################################
@@ -135,9 +167,14 @@ cd $CWD
 ###############################################################################
 cd scripts/
 printf "\nStep 1 (1): Profile the application\n"
+
+start_gpu_logger "$GPU_LOG_DIR/profiler_run.csv"
 python run_profiler.py
+stop_gpu_logger
+
 rm -f stdout.txt stderr.txt ### cleanup
 cd -
+
 
 cd scripts/
 printf "\nStep 1 (2): Generate injection list for instruction-level error injections\n"
@@ -146,8 +183,11 @@ python generate_injection_list.py
 ################################################
 # Step 2: Run the error injection campaign 
 ################################################
-printf "\nStep 2: Run the error injection campaign"
-python run_injections.py standalone simple_add # to run the injection campaign on a single machine with single gpu
+printf "\nStep 2: Run the error injection campaign\n"
+
+start_gpu_logger "$GPU_LOG_DIR/injection_run.csv"
+python run_injections.py standalone simple_add
+stop_gpu_logger
 
 ################################################
 # Step 3: Parse the results
